@@ -18,3 +18,20 @@ packages = [{include = "test_project", from = "src"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.15.12,<0.16.0)"
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "ANN"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
